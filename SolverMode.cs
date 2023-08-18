@@ -7,6 +7,8 @@ namespace SudokuGame
     {
         private MainMenu MainMenu;
         private int[,] puzzle = new int[9, 9];
+        private int[,] finishedPuzzle;
+        private int selectedDifficulty = 7;
         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
         public SolverMode(MainMenu mainMenu)
         {
@@ -22,6 +24,8 @@ namespace SudokuGame
             this.Text = Resources.SolverModeForm;
             button1.Text = Resources.SolveBtn;
             button2.Text = Resources.EndBtn;
+            button3.Text = Resources.GenerateBtn;
+            label1.Text = string.Format(Resources.Difficulty, selectedDifficulty);
         }
 
         private void GenerateEmptyPuzzle()
@@ -133,6 +137,18 @@ namespace SudokuGame
         {
             MainMenu.Show();
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SudokuUtility.GeneratePuzzle(ref puzzle, ref finishedPuzzle, selectedDifficulty);
+            UpdateGridWithSolution();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            selectedDifficulty = trackBar1.Value;
+            label1.Text = string.Format(Resources.Difficulty, selectedDifficulty);
         }
     }
 }

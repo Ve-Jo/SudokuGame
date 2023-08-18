@@ -88,11 +88,29 @@ namespace SudokuGame {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Изменений: {0}.
+        /// </summary>
+        internal static string ChangesText {
+            get {
+                return ResourceManager.GetString("ChangesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Проверить.
         /// </summary>
         internal static string CheckBtn {
             get {
                 return ResourceManager.GetString("CheckBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверок: {0}.
+        /// </summary>
+        internal static string ChecksText {
+            get {
+                return ResourceManager.GetString("ChecksText", resourceCulture);
             }
         }
         
@@ -124,6 +142,15 @@ namespace SudokuGame {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Сгенерировать.
+        /// </summary>
+        internal static string GenerateBtn {
+            get {
+                return ResourceManager.GetString("GenerateBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выбор языка.
         /// </summary>
         internal static string LanguageSelector {
@@ -147,6 +174,15 @@ namespace SudokuGame {
         internal static string NormalGameForm {
             get {
                 return ResourceManager.GetString("NormalGameForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Наиграно: {0}.
+        /// </summary>
+        internal static string SecondsTimer {
+            get {
+                return ResourceManager.GetString("SecondsTimer", resourceCulture);
             }
         }
         

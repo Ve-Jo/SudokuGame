@@ -126,8 +126,14 @@
   <data name="AutomodeStart" xml:space="preserve">
     <value>Авто-прохождение</value>
   </data>
+  <data name="ChangesText" xml:space="preserve">
+    <value>Изменений: {0}</value>
+  </data>
   <data name="CheckBtn" xml:space="preserve">
     <value>Проверить</value>
+  </data>
+  <data name="ChecksText" xml:space="preserve">
+    <value>Проверок: {0}</value>
   </data>
   <data name="Difficulty" xml:space="preserve">
     <value>Сложность: {0}</value>
@@ -138,6 +144,9 @@
   <data name="GameStart" xml:space="preserve">
     <value>Начать игру</value>
   </data>
+  <data name="GenerateBtn" xml:space="preserve">
+    <value>Сгенерировать</value>
+  </data>
   <data name="LanguageSelector" xml:space="preserve">
     <value>Выбор языка</value>
   </data>
@@ -146,6 +155,9 @@
   </data>
   <data name="NormalGameForm" xml:space="preserve">
     <value>Классический режим</value>
+  </data>
+  <data name="SecondsTimer" xml:space="preserve">
+    <value>Наиграно: {0}</value>
   </data>
   <data name="SolveBtn" xml:space="preserve">
     <value>Решить</value>

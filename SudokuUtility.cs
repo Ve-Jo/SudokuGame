@@ -8,6 +8,16 @@ namespace SudokuGame
 {
     internal class SudokuUtility
     {
+        public static void GeneratePuzzle(ref int[,] puzzle, ref int[,] finishedPuzzle, int difficulty)
+        {
+            puzzle = new int[9, 9];
+
+            SudokuUtility.FillUpperLeft3x3(puzzle);
+            SudokuUtility.SolvePuzzle(puzzle);
+            finishedPuzzle = new int[9, 9];
+            Array.Copy(puzzle, finishedPuzzle, puzzle.Length);
+            SudokuUtility.RemoveNumbers(puzzle, difficulty * 5);
+        }
         public static bool HasUniqueSolution(int[,] grid)
         {
             int[,] puzzleCopy = new int[9, 9];

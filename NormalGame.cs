@@ -9,6 +9,9 @@ namespace SudokuGame
         private int[,] finishedPuzzle;
         private int difficulty = 7;
         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+        private int currentSeconds = 0;
+        private int numbersChanged = 0;
+        private int checksPressed = 0;
         public NormalGame(MainMenu mainMenu)
         {
             InitializeComponent();
@@ -22,23 +25,10 @@ namespace SudokuGame
             Close.Text = Resources.EndBtn;
             button1.Text = Resources.CheckBtn;
         }
-
-        private int[,] GeneratePuzzle()
-        {
-            puzzle = new int[9, 9];
-
-            SudokuUtility.FillUpperLeft3x3(puzzle);
-            SudokuUtility.SolvePuzzle(puzzle);
-            finishedPuzzle = new int[9, 9];
-            Array.Copy(puzzle, finishedPuzzle, puzzle.Length);
-            SudokuUtility.RemoveNumbers(puzzle, difficulty * 5);
-
-            return puzzle;
-        }
         public void SetDifficulty(int newDifficulty)
         {
             difficulty = newDifficulty;
-            GeneratePuzzle();
+            SudokuUtility.GeneratePuzzle(ref puzzle, ref finishedPuzzle, difficulty);
         }
 
         private void GenerateGrid()
@@ -79,7 +69,7 @@ namespace SudokuGame
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            GeneratePuzzle();
+            SudokuUtility.GeneratePuzzle(ref puzzle, ref finishedPuzzle, difficulty);
             GenerateGrid();
         }
 
@@ -98,6 +88,11 @@ namespace SudokuGame
                     int sanitizedValue = int.Parse(sanitizedInput);
                     if (sanitizedValue >= 1 && sanitizedValue <= 9)
                     {
+                        if (puzzle[row, col] == 0)
+                        {
+                            numbersChanged++;
+                            toolStripStatusLabel1.Text = string.Format(Resources.ChangesText, numbersChanged);
+                        }
                         puzzle[row, col] = sanitizedValue;
                         textBox.Text = sanitizedInput;
                         textBox.Parent.Focus();
@@ -190,6 +185,8 @@ namespace SudokuGame
 
         private void button1_Click(object sender, EventArgs e)
         {
+            checksPressed++;
+            toolStripStatusLabel3.Text = string.Format(Resources.ChecksText, checksPressed);
             HighlightIncorrectTextBoxes();
 
             if (IsWin())
@@ -202,6 +199,12 @@ namespace SudokuGame
         {
             MainMenu.Show();
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            currentSeconds++;
+            toolStripStatusLabel2.Text = string.Format(Resources.SecondsTimer, currentSeconds);
         }
     }
 }
