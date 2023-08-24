@@ -14,6 +14,7 @@ namespace SudokuGame
         public MainMenu()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             InitializeLocalization();
             UpdateTexts();
         }

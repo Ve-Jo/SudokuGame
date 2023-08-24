@@ -15,6 +15,7 @@ namespace SudokuGame
         public NormalGame(MainMenu mainMenu)
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             UpdateTexts();
             MainMenu = mainMenu;
         }

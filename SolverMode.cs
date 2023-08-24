@@ -13,6 +13,7 @@ namespace SudokuGame
         public SolverMode(MainMenu mainMenu)
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             UpdateTexts();
             GenerateEmptyPuzzle();
             GenerateGrid();
