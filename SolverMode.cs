@@ -35,17 +35,15 @@ namespace SudokuGame
 
         private void GenerateGrid()
         {
-            tableLayoutPanel.Location = new Point(10, 65);
-            tableLayoutPanel.Size = new Size(360, 360);
-            tableLayoutPanel.Padding = new Padding(0);
-            tableLayoutPanel.Margin = new Padding(0);
+            tableLayoutPanel.Location = new Point(10, 130);
+            tableLayoutPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right;
             tableLayoutPanel.ColumnStyles.Clear();
             tableLayoutPanel.RowStyles.Clear();
 
             for (int i = 0; i < 9; i++)
             {
                 tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f)); // Add RowStyle for each row
             }
 
             for (int row = 0; row < 9; row++)
@@ -55,6 +53,7 @@ namespace SudokuGame
                     TextBox textBox = new TextBox();
                     textBox.Text = puzzle[row, col] == 0 ? "" : puzzle[row, col].ToString();
                     textBox.Dock = DockStyle.Fill;
+                    textBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right;
                     textBox.TextAlign = HorizontalAlignment.Center;
                     textBox.TextChanged += TextBox_TextChanged;
                     textBox.Margin = new Padding(0);
@@ -65,6 +64,7 @@ namespace SudokuGame
                 }
             }
 
+            tableLayoutPanel.Size = new Size(ClientSize.Width - 20, ClientSize.Height - 130);
             Controls.Add(tableLayoutPanel);
         }
 

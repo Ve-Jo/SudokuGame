@@ -38,9 +38,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(23, 444);
+            button1.Location = new Point(160, 22);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(86, 29);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -56,7 +56,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(139, 443);
+            button3.Location = new Point(267, 21);
             button3.Name = "button3";
             button3.Size = new Size(102, 30);
             button3.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(258, 443);
+            trackBar1.Location = new Point(154, 66);
             trackBar1.Maximum = 12;
             trackBar1.Minimum = 1;
             trackBar1.Name = "trackBar1";
@@ -78,7 +78,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(267, 420);
+            label1.Location = new Point(274, 66);
             label1.Name = "label1";
             label1.Size = new Size(0, 20);
             label1.TabIndex = 7;
@@ -87,7 +87,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 484);
+            ClientSize = new Size(406, 502);
             Controls.Add(label1);
             Controls.Add(trackBar1);
             Controls.Add(button3);

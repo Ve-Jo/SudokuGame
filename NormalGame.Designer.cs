@@ -34,14 +34,14 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            timer1 = new System.Windows.Forms.Timer(components);
             toolStripStatusLabel3 = new ToolStripStatusLabel();
+            timer1 = new System.Windows.Forms.Timer(components);
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(24, 432);
+            button1.Location = new Point(268, 21);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 0;
@@ -61,9 +61,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel2, toolStripStatusLabel1, toolStripStatusLabel3 });
-            statusStrip1.Location = new Point(0, 472);
+            statusStrip1.Location = new Point(0, 423);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(384, 26);
+            statusStrip1.Size = new Size(391, 26);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -79,23 +79,23 @@
             toolStripStatusLabel1.Size = new Size(13, 20);
             toolStripStatusLabel1.Text = " ";
             // 
-            // timer1
-            // 
-            timer1.Enabled = true;
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
-            // 
             // toolStripStatusLabel3
             // 
             toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             toolStripStatusLabel3.Size = new Size(13, 20);
             toolStripStatusLabel3.Text = " ";
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // NormalGame
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 498);
+            ClientSize = new Size(391, 449);
             Controls.Add(statusStrip1);
             Controls.Add(Close);
             Controls.Add(button1);
